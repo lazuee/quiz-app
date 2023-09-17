@@ -31,7 +31,7 @@ readdirSync("data", { withFileTypes: true })
       // Extract the choices
       const choices = lines
         .slice(1, lines.length)
-        .map((line) => line.replace(/^\s*[a-z]\)\s/, ""));
+        .map((line) => line.replace(/^\s*- /, ""));
 
       // Get the answer of the question
       const answer = answers[index];
