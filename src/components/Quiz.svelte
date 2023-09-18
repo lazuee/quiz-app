@@ -1,14 +1,10 @@
 <div>
-	<h1>Take some Quizes</h1>
-	<section>
+	<section id="header">
 		<span />
 		<div>
 			<div>
 				<span />
-				<div>
-					<h2>IT 101</h2>
-					<p>Let's test what you've learned...</p>
-				</div>
+				<div />
 			</div>
 			<div>
 				<span />
@@ -44,6 +40,18 @@
 					<h2>IT 101</h2>
 					<p>Let's test what you've learned...</p>
 				</div>
+			</div>
+			<div>
+				<span />
+				<div>
+					<h2>IT 101</h2>
+					<p>Let's test what you've learned...</p>
+				</div>
+			</div>
+
+			<div>
+				<span />
+				<div />
 			</div>
 		</div>
 		<span />
@@ -55,7 +63,7 @@
 </div>
 
 <style lang="scss">
-	div:has(> section) {
+	div:has(> section#header) {
 		width: 100%;
 		display: flex;
 		flex-direction: column;
@@ -63,19 +71,21 @@
 		align-items: center;
 	}
 
-	section {
+	section#header {
 		width: 100%;
 		position: relative;
 		display: flex;
 		gap: 1.5rem;
 		flex-direction: column-reverse;
+		@media (min-width: 768px) and (max-width: 1279px) {
+			align-items: center;
+		}
 		@media (min-width: 768px) {
 			flex-direction: row;
 			padding-right: 2rem;
 		}
 
 		@media (min-width: 768px) {
-			scroll-padding-left: 0.5rem;
 			scroll-snap-type: x mandatory;
 		}
 		scroll-behavior: smooth;
@@ -83,51 +93,48 @@
 		scroll-snap-type: y mandatory;
 	}
 
-	section > aside {
+	section#header > aside {
 		flex-grow: 1;
 	}
 
-	section > div {
+	section#header > div {
 		scroll-snap-align: start;
 		scroll-snap-stop: normal;
 		position: relative;
 	}
-	section > div {
+	section#header > div {
 		position: relative;
 		width: 100%;
+		height: 100%;
 		overflow-y: scroll;
 		display: flex;
 		flex-direction: column;
-
-		@media (max-width: 767px) {
-			scroll-padding-bottom: 2rem;
-			padding: 1.5rem 2rem;
-		}
+		padding-top: 3rem;
 		@media (min-width: 768px) {
-			max-width: 480px;
 			padding-left: 2rem;
-			padding-top: 2rem;
+			max-width: 480px;
 		}
 		@media (min-width: 1024px) {
 			max-width: 540px;
 		}
 		@media (max-width: 1279px) {
-			height: calc(100vh - 190px);
+			height: calc(100vh - 10.6875rem);
 		}
 		@media (min-width: 1280px) {
 			max-width: 720px;
-			scroll-padding-left: calc(1.5rem + 1.3rem);
+			scroll-padding-left: 1.5rem;
 			scroll-snap-type: x mandatory;
-			padding-top: 0.625rem;
 			overflow-x: scroll;
 			flex-direction: row;
+			padding-top: 0.5rem;
 		}
-		gap: 1.3rem;
+		gap: 1.5rem;
+		scroll-padding-top: 1.5rem;
 		scroll-snap-type: y mandatory;
 		scroll-behavior: smooth;
 	}
 
-	section > span {
+	section#header > span {
 		position: absolute;
 		z-index: 7;
 		pointer-events: none;
@@ -146,7 +153,7 @@
 		width: 100%;
 		height: 3rem;
 	}
-	section > span:first-of-type {
+	section#header > span:first-of-type {
 		left: 0;
 		top: calc(160px + 1.5rem);
 
@@ -159,7 +166,7 @@
 		background: linear-gradient(to bottom, #151217 0%, #15121700 60%);
 	}
 
-	section > span:last-of-type {
+	section#header > span:last-of-type {
 		left: 0;
 		@media (min-width: 1280px) {
 			left: calc(730px - 3rem) !important;
@@ -171,7 +178,7 @@
 		background: linear-gradient(to top, #151217 0%, #15121700 60%);
 	}
 
-	section > aside {
+	section#header > aside {
 		background: #151515;
 
 		border: 2px dashed rgb(97, 69, 93);
@@ -179,14 +186,16 @@
 			border: 2px dashed rgb(97, 69, 93);
 			border-radius: 0.5rem;
 		}
+		@media (min-width: 1280px) {
+			margin-top: 0.5rem;
+		}
 		display: flex;
 		flex-direction: column;
 		padding: 1.5rem;
-		margin-top: 0.625rem;
 		height: 160px;
 	}
 
-	section > div::-webkit-scrollbar {
+	section#header > div::-webkit-scrollbar {
 		width: 0px;
 		background-color: transparent;
 
@@ -199,12 +208,34 @@
 			background-color: transparent;
 		}
 	}
-	section > div > div {
+	section#header > div > div {
 		scroll-snap-align: start;
-		scroll-snap-stop: normal;
+		flex-shrink: 0;
+		scroll-snap-stop: always;
 		position: relative;
 	}
-	section > div > div > div {
+
+	section#header > div > div:first-child > div,
+	section#header > div > div:last-child > div {
+		position: relative;
+		flex-shrink: 0;
+
+		height: 1rem;
+		@media (min-width: 1280px) {
+			width: 1rem;
+		}
+		@media (min-width: 768px) and (max-width: 1279px) {
+			height: 12rem;
+		}
+		border: none;
+	}
+
+	section#header > div > div:first-child:hover > div,
+	section#header > div > div:last-child:hover > div {
+		transform: translate(0, 0);
+		background: transparent;
+	}
+	section#header > div > div > div {
 		width: 100%;
 		@media (min-width: 1280px) {
 			width: 300px;
@@ -221,14 +252,14 @@
 		transition-duration: 150ms;
 	}
 
-	section > div > div > span {
+	section#header > div > div > span {
 		position: absolute;
 		inset: 0;
 		border: 2px dashed rgba(231, 184, 225, 0.4);
 		border-radius: 0.5rem;
 	}
 
-	section > div > div:hover > div {
+	section#header > div > div:hover > div {
 		transform: translate(-0.5rem, -0.5rem);
 		background: rgba(114, 75, 109, 0.4);
 	}

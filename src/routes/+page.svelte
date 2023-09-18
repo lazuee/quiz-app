@@ -1,10 +1,12 @@
 <script>
 	// @ts-ignore
 	import Footer from "../components/Footer.svelte";
+	import Nav from "../components/Nav.svelte";
 	import Quiz from "../components/Quiz.svelte";
 </script>
 
 <div class="wrapper">
+	<Nav />
 	<main>
 		<Quiz />
 	</main>
