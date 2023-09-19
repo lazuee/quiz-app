@@ -14,11 +14,25 @@
 	nav {
 		display: flex;
 		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		padding: 0 2rem;
+	}
+	nav > div {
+		display: flex;
+		align-items: center;
 	}
 	nav > div > ul {
 		list-style-type: none;
+		display: flex;
+		gap: 0.5rem;
 	}
-	a {
-		text-decoration: none;
+	nav > div > ul > li {
+		padding: 0.5rem 1rem;
+		border: 2px solid rgb(97, 69, 93);
+		border-radius: 0.5rem;
+		@media (min-width: 1024px) {
+			border-radius: 9999px;
+		}
 	}
 </style>

@@ -6,6 +6,17 @@
 </script>
 
 <div class="wrapper">
+	<div
+		style="position: absolute; overflow: hidden; display: flex; justify-content: center; z-index: -20; top: 0; left: 0; right: 0; pointer-events: none;">
+		<div style="flex: none; justify-content: flex-start; width: 108rem; display: flex;">
+			<picture
+				><source type="image" /><img
+					style="max-width: none; width: 90rem; flex: none; display: block"
+					src="images/tiny.png"
+					alt=""
+					decoding="async" /></picture>
+		</div>
+	</div>
 	<Nav />
 	<main>
 		<Quiz />

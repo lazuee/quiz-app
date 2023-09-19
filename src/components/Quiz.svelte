@@ -121,6 +121,8 @@
 			height: calc(100vh - 10.6875rem);
 		}
 		@media (min-width: 1280px) {
+			border-top-right-radius: 2rem;
+			border-bottom-right-radius: 2rem;
 			max-width: 720px;
 			scroll-padding-left: 1.5rem;
 			scroll-snap-type: x mandatory;
@@ -169,13 +171,17 @@
 	section#header > span:last-of-type {
 		left: 0;
 		@media (min-width: 1280px) {
-			left: calc(730px - 3rem) !important;
+			left: calc(730px - 3.5rem) !important;
 			background: linear-gradient(to left, #151217 0%, #15121700 60%);
 		}
 		@media (max-width: 1280px) {
 			bottom: 0;
 		}
 		background: linear-gradient(to top, #151217 0%, #15121700 60%);
+		@media (min-width: 1280px) {
+			border-top-right-radius: 2rem;
+			border-bottom-right-radius: 2rem;
+		}
 	}
 
 	section#header > aside {
@@ -225,11 +231,21 @@
 			width: 1rem;
 		}
 		@media (min-width: 768px) and (max-width: 1279px) {
-			height: 12rem;
+			height: 6rem;
 		}
 		border: none;
 	}
 
+	section#header > div > div:last-child > div {
+		@media (min-width: 1280px) {
+			width: 20rem;
+		}
+	}
+	section#header > div > div:last-child {
+		@media (min-width: 1280px) {
+			margin-right: 2rem;
+		}
+	}
 	section#header > div > div:first-child:hover > div,
 	section#header > div > div:last-child:hover > div {
 		transform: translate(0, 0);
@@ -238,9 +254,9 @@
 	section#header > div > div > div {
 		width: 100%;
 		@media (min-width: 1280px) {
-			width: 300px;
+			width: 320px;
+			height: 160px;
 		}
-		height: 160px;
 		position: relative;
 		border: 2px solid rgb(97, 69, 93);
 		border-radius: 0.5rem;
